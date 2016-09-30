@@ -11,9 +11,10 @@ var Snake = {
 	// How many parts of the snake we will spawn.
 	startPartAmount: 10,
 
+	// Coördinates of our snake head.
 	snakeHeadX: null,
 	snakeHeadY: null,
-
+	
 	oldPosX: null,
 	oldPosY: null,
 
@@ -34,24 +35,23 @@ var Snake = {
 		this.oldPosX = lastCell.x;
 		this.oldPosY = lastCell.y;
 
-		if (KeyboardInput.direction == "right"){
-			lastCell.x = firstCell.x + this.snakeImageSize;
-			lastCell.y = firstCell.y;
-		}
-
-		else if (KeyboardInput.direction == "left"){
-			lastCell.x = firstCell.x - this.snakeImageSize;
-			lastCell.y = firstCell.y;
-		}
-
-		else if (KeyboardInput.direction == "up"){
-			lastCell.x = firstCell.x;
-			lastCell.y = firstCell.y - this.snakeImageSize;
-		}
-
-		else if (KeyboardInput.direction == "down"){
-			lastCell.x = firstCell.x;
-			lastCell.y = firstCell.y + this.snakeImageSize;
+		switch(KeyboardInput.direction){
+			case "right":
+				lastCell.x = firstCell.x + this.snakeImageSize;
+				lastCell.y = firstCell.y;
+				break;
+			case "left":
+				lastCell.x = firstCell.x - this.snakeImageSize;
+				lastCell.y = firstCell.y;
+				break;
+			case "up":
+				lastCell.x = firstCell.x;
+				lastCell.y = firstCell.y - this.snakeImageSize;
+				break;
+			case "down":
+				lastCell.x = firstCell.x;
+				lastCell.y = firstCell.y + this.snakeImageSize;
+				break;
 		}
 
 		this.snakeHeadX = lastCell.x;

@@ -1,6 +1,6 @@
 KeyboardInput = {
 
-	// Setting the starting direction to left.
+	// Setting the starting direction to right.
 	direction: 'right',
 
 	// Changing the direciton to the corresponding key.

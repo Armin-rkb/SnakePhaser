@@ -5,6 +5,7 @@ var Game = {
 	// Loading our assets.
 	preload: function(){
 		cursors = game.input.keyboard.createCursorKeys();
+		KeyboardInput.direction = 'right';
 
 		// Load our snake image.
 		Game.load.image(Snake.snakeImageName, Snake.snakeImageSrc);
@@ -25,7 +26,7 @@ var Game = {
 		// Checking the input of out player each frame.	
 		KeyboardInput.CheckDirection();
 
-		if(this.delay%10 == 0){
+		if(this.delay%5 == 0){
 			// Move our snake to the last given direction.
 			Snake.MoveSnake();
 

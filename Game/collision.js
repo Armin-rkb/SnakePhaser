@@ -19,15 +19,15 @@ var Collision = {
 		for (var i = 0; i < Snake.snake.length - 1; i++) {
 			if (Snake.snakeHeadX == Snake.snake[i].x && Snake.snakeHeadY == Snake.snake[i].y){
 				// Change to gameover scene.
-				console.log("Game over!");
+				game.state.start('Game', true, false);
 			}
 		}
 	},
 
 	WallCollision: function(){
-		if (Snake.snakeHeadX > 800 || Snake.snakeHeadY > 600 || Snake.snakeHeadX < 0 || Snake.snakeHeadY < 0){
+		if (Snake.snakeHeadX > ScreenSize.gameWidth || Snake.snakeHeadY > ScreenSize.gameHeight || Snake.snakeHeadX < 0 || Snake.snakeHeadY < 0){
 			// Change to gameover scene.
-			console.log("Game over!");
+			game.state.start('Game', true, false);
 		}
 	}
 }
