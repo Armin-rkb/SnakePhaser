@@ -7,5 +7,6 @@ ScreenSize.gameHeight = Math.floor((window.innerHeight / 15)* 15);
 
 var game = new Phaser.Game(ScreenSize.gameWidth, ScreenSize.gameHeight, Phaser.AUTO, '');
 
+game.state.add('MainMenu', MainMenu);
 game.state.add('Game', Game);
-game.state.start('Game');
+game.state.start('MainMenu');

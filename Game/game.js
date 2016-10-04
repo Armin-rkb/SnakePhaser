@@ -23,6 +23,8 @@ var Game = {
 	update: function(){   
 		this.delay++;
 
+		TouchInput.CheckTouch();
+
 		// Checking the input of out player each frame.	
 		KeyboardInput.CheckDirection();
 

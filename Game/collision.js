@@ -19,7 +19,7 @@ var Collision = {
 		for (var i = 0; i < Snake.snake.length - 1; i++) {
 			if (Snake.snakeHeadX == Snake.snake[i].x && Snake.snakeHeadY == Snake.snake[i].y){
 				// Change to gameover scene.
-				game.state.start('Game', true, false);
+				game.state.start('MainMenu', true, false);
 			}
 		}
 	},
@@ -27,7 +27,7 @@ var Collision = {
 	WallCollision: function(){
 		if (Snake.snakeHeadX > ScreenSize.gameWidth || Snake.snakeHeadY > ScreenSize.gameHeight || Snake.snakeHeadX < 0 || Snake.snakeHeadY < 0){
 			// Change to gameover scene.
-			game.state.start('Game', true, false);
+			game.state.start('MainMenu');
 		}
 	}
 }
