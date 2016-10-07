@@ -10,3 +10,4 @@ var game = new Phaser.Game(ScreenSize.gameWidth, ScreenSize.gameHeight, Phaser.A
 game.state.add('MainMenu', MainMenu);
 game.state.add('Game', Game);
 game.state.start('MainMenu');
+

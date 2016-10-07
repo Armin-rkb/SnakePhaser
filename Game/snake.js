@@ -1,7 +1,13 @@
+var snake;
+
 var Snake = {
 	// Parts of our snake.
-	snake: [],
+	//snake: [],
 	// Snake travel speed.
+
+	// The direction our snake will be heading.
+	direction: 'right',
+	
 	speed: 10,
 	// The name we will call the image and the file location.
 	snakeImageName: 'snake',
@@ -20,22 +26,22 @@ var Snake = {
 
 	SpawnSnake(){
 		for (var i = 0; i < this.startPartAmount; i++) {
-			this.snake[i] = Game.add.sprite(300 + i * this.snakeImageSize, 300, this.snakeImageName);
+			snake[i] = Game.add.sprite(300 + i * this.snakeImageSize, 300, this.snakeImageName);
 		}
 	},
 
 	AddSnakePart(){
 		// Add another sprite to the beginning of our array and place it on the last changed position.
-		this.snake.unshift(Game.add.sprite(this.oldPosX, this.oldPosY, 'snake'));
+		snake.unshift(Game.add.sprite(this.oldPosX, this.oldPosY, 'snake'));
 	},
 
 	MoveSnake(){
-		var firstCell = this.snake[this.snake.length - 1];
-		var lastCell = this.snake.shift();
+		var firstCell = snake[snake.length - 1];
+		var lastCell = snake.shift();
 		this.oldPosX = lastCell.x;
 		this.oldPosY = lastCell.y;
 
-		switch(KeyboardInput.direction){
+		switch(this.direction){
 			case "right":
 				lastCell.x = firstCell.x + this.snakeImageSize;
 				lastCell.y = firstCell.y;
@@ -57,7 +63,7 @@ var Snake = {
 		this.snakeHeadX = lastCell.x;
 		this.snakeHeadY = lastCell.y;
 
-		this.snake.push(lastCell);
+		snake.push(lastCell);
 		firstCell = lastCell;
-	},
+	}
 };

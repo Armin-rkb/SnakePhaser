@@ -13,5 +13,5 @@ var MainMenu = {
 	update: function(){
 		if (game.input.activePointer.isDown)
 			game.state.start('Game');		
-	},
+	}
 };

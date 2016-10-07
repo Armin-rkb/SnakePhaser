@@ -5,7 +5,10 @@ var Game = {
 	// Loading our assets.
 	preload: function(){
 		cursors = game.input.keyboard.createCursorKeys();
+		//Setting out starting direction
 		KeyboardInput.direction = 'right';
+
+		snake = [];
 
 		// Load our snake image.
 		Game.load.image(Snake.snakeImageName, Snake.snakeImageSrc);
@@ -39,4 +42,8 @@ var Game = {
 		}
 
 	},
+
+	shutdown: function(){
+		Snake.direction = 'right';
+	}
 };

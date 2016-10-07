@@ -16,8 +16,8 @@ var Collision = {
 	},
 
 	SelfCollision: function(){
-		for (var i = 0; i < Snake.snake.length - 1; i++) {
-			if (Snake.snakeHeadX == Snake.snake[i].x && Snake.snakeHeadY == Snake.snake[i].y){
+		for (var i = 0; i < snake.length - 1; i++) {
+			if (Snake.snakeHeadX == snake[i].x && Snake.snakeHeadY == snake[i].y){
 				// Change to gameover scene.
 				game.state.start('MainMenu', true, false);
 			}

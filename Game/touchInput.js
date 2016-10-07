@@ -8,16 +8,18 @@ var TouchInput = {
 	touchGet: false,
 
 	CheckTouch: function(){
+		// Set our starting position when we press down.
 		if (game.input.pointer1.isDown && !this.touchGet){
 			this.startPosX = game.input.pointer1.positionDown.x;
 			this.startPosY = game.input.pointer1.positionDown.y;
 			this.touchGet = true;
 		}
-
+		// Set our ending position when we stopped pressing down
 		else if (game.input.pointer1.isUp && this.touchGet){
 			this.endPosX = game.input.pointer1.positionUp.x;
 			this.endPosY = game.input.pointer1.positionUp.y;
 			this.touchGet = false;
+			// 
 			this.CalculateDifference();
 			this.CalculateDirection();
 		}
@@ -31,15 +33,15 @@ var TouchInput = {
 	CalculateDirection: function(){
 		if (Math.abs(this.differenceX) > Math.abs(this.differenceY)){
 			if (this.differenceX < 0 && KeyboardInput.direction != "left")
-				KeyboardInput.direction = "right";
+				Snake.direction = "right";
 			else if (this.differenceX > 0 && KeyboardInput.direction != "right")
-				KeyboardInput.direction = "left";
+				Snake.direction = "left";
 		}
 		else if (Math.abs(this.differenceY) > Math.abs(this.differenceX)){
 			if (this.differenceY < 0 && KeyboardInput.direction != "up")
-				KeyboardInput.direction = "down";
+				Snake.direction = "down";
 			else if (this.differenceY > 0 && KeyboardInput.direction != "down")
-				KeyboardInput.direction = "up";
+				Snake.direction = "up";
 		}
-	},
+	}
 }
