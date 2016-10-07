@@ -32,15 +32,15 @@ var TouchInput = {
 
 	CalculateDirection: function(){
 		if (Math.abs(this.differenceX) > Math.abs(this.differenceY)){
-			if (this.differenceX < 0 && KeyboardInput.direction != "left")
+			if (this.differenceX < 0 && Snake.direction != "left")
 				Snake.direction = "right";
-			else if (this.differenceX > 0 && KeyboardInput.direction != "right")
+			else if (this.differenceX > 0 && Snake.direction != "right")
 				Snake.direction = "left";
 		}
 		else if (Math.abs(this.differenceY) > Math.abs(this.differenceX)){
-			if (this.differenceY < 0 && KeyboardInput.direction != "up")
+			if (this.differenceY < 0 && Snake.direction != "up")
 				Snake.direction = "down";
-			else if (this.differenceY > 0 && KeyboardInput.direction != "down")
+			else if (this.differenceY > 0 && Snake.direction != "down")
 				Snake.direction = "up";
 		}
 	}

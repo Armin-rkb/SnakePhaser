@@ -1,8 +1,7 @@
+// Parts of our snake.
 var snake;
 
 var Snake = {
-	// Parts of our snake.
-	//snake: [],
 	// Snake travel speed.
 
 	// The direction our snake will be heading.

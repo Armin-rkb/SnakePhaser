@@ -5,8 +5,9 @@ var Game = {
 	// Loading our assets.
 	preload: function(){
 		cursors = game.input.keyboard.createCursorKeys();
+
 		//Setting out starting direction
-		KeyboardInput.direction = 'right';
+		Snake.direction = 'right';
 
 		snake = [];
 
@@ -41,9 +42,5 @@ var Game = {
 			Collision.WallCollision();
 		}
 
-	},
-
-	shutdown: function(){
-		Snake.direction = 'right';
 	}
 };
