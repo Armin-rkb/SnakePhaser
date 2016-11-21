@@ -19,7 +19,7 @@ var TouchInput = {
 			this.endPosX = game.input.pointer1.positionUp.x;
 			this.endPosY = game.input.pointer1.positionUp.y;
 			this.touchGet = false;
-			// 
+			// Checking the swipe direction.
 			this.CalculateDifference();
 			this.CalculateDirection();
 		}
@@ -32,16 +32,16 @@ var TouchInput = {
 
 	CalculateDirection: function(){
 		if (Math.abs(this.differenceX) > Math.abs(this.differenceY)){
-			if (this.differenceX < 0 && Snake.direction != "left")
-				Snake.direction = "right";
-			else if (this.differenceX > 0 && Snake.direction != "right")
-				Snake.direction = "left";
+			if (this.differenceX < 0 && Snake.direction != Direction.left)
+				Snake.direction = Direction.right;
+			else if (this.differenceX > 0 && Snake.direction != Direction.right)
+				Snake.direction = Direction.left;
 		}
 		else if (Math.abs(this.differenceY) > Math.abs(this.differenceX)){
-			if (this.differenceY < 0 && Snake.direction != "up")
-				Snake.direction = "down";
-			else if (this.differenceY > 0 && Snake.direction != "down")
-				Snake.direction = "up";
+			if (this.differenceY < 0 && Snake.direction != Direction.up)
+				Snake.direction = Direction.down;
+			else if (this.differenceY > 0 && Snake.direction != Direction.down)
+				Snake.direction = Direction.up;
 		}
 	}
 }

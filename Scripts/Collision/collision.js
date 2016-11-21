@@ -1,10 +1,10 @@
 var Collision = {
 
 	AppleCollision: function(){
-			if (Snake.snakeHeadX == Pickup.apple.x && Snake.snakeHeadY == Pickup.apple.y){
+			if (Snake.snakeHeadX == Pickup.snakePickup.x && Snake.snakeHeadY == Pickup.snakePickup.y){
 
 				// Remove the apple.
-				Pickup.apple.destroy();
+				Pickup.snakePickup.destroy();
 
 				// Add snake part.
 				Snake.AddSnakePart();

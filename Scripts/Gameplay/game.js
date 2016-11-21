@@ -7,7 +7,7 @@ var Game = {
 		cursors = game.input.keyboard.createCursorKeys();
 
 		//Setting out starting direction
-		Snake.direction = 'right';
+		Snake.direction = Direction.right;
 
 		snake = [];
 
